@@ -7,17 +7,31 @@
   <title>PRISM — Media Grabber</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="downloader.css" />
+  <style>
+    /* v3 warm-palette patch over old downloader.css */
+    .grabber-head h1 {
+      font-family: var(--display);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+    .grabber-head h1 em { font-style: italic; color: var(--accent); }
+    .mode.active { background: var(--accent-soft); }
+  </style>
 </head>
-<body class="grabber-page">
-  <div class="aurora" aria-hidden="true">
-    <span class="orb o1"></span>
-    <span class="orb o2"></span>
-    <span class="orb o3"></span>
+<body>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Media grabber</span>
+      <span>MP4 · MP3</span>
+      <span>Best-first ranking</span>
+      <span>Media grabber</span>
+      <span>MP4 · MP3</span>
+      <span>Best-first ranking</span>
+    </div>
   </div>
-  <div class="grid-veil" aria-hidden="true"></div>
 
   <header class="nav">
     <a href="/" class="logo"><span class="logo-mark">◆</span><span class="logo-text">PRISM</span></a>
@@ -25,12 +39,15 @@
       <a href="/">Home</a>
       <a href="/tools">Tools</a>
     </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <main class="grabber">
     <div class="grabber-head reveal">
       <span class="eyebrow">media grabber</span>
-      <h1>Pull <span class="gradient">video or audio</span><br />from any link.</h1>
+      <h1>Pull <em>video or audio</em> from any link.</h1>
       <p class="lede">Paste a YouTube URL. Choose a format. Every stream that matters, ranked best first — no clutter, no signup.</p>
     </div>
 
@@ -38,9 +55,7 @@
       <div class="field">
         <label for="url">Video URL</label>
         <div class="input-shell">
-          <span class="input-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>
-          </span>
+          <span class="input-icon" aria-hidden="true">◆</span>
           <input id="url" name="url" type="url" placeholder="https://youtube.com/watch?v=…" required autocomplete="off" spellcheck="false" />
         </div>
       </div>
