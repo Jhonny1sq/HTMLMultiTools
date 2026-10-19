@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRISM — Media Grabber</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="downloader.css" />
+</head>
+<body>
+  <div class="beam" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="/" class="logo"><span class="logo-mark">◆</span><span class="logo-text">PRISM</span></a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/tools">Tools</a>
+    </nav>
+  </header>
+
+  <main class="grabber">
+    <div class="grabber-head">
+      <p class="eyebrow">media grabber</p>
+      <h1>Pull <span class="gradient">video or audio</span> from a link.</h1>
+      <p class="section-sub">Paste a YouTube URL. Pick MP4 or MP3. Get the stream.</p>
+    </div>
+
+    <form id="grab-form" class="grab-form">
+      <div class="field">
+        <label for="url">Video URL</label>
+        <input id="url" name="url" type="url" placeholder="https://youtube.com/watch?v=..." required />
+      </div>
+
+      <div class="mode-row" role="tablist" aria-label="Format">
+        <button type="button" class="mode active" data-mode="mp4" role="tab" aria-selected="true">MP4 · video</button>
+        <button type="button" class="mode" data-mode="mp3" role="tab" aria-selected="false">MP3 · audio</button>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="grab-btn">Resolve streams</button>
+    </form>
+
+    <section id="result" class="result" hidden>
+      <div class="result-head">
+        <img id="thumb" alt="" />
+        <div>
+          <h2 id="title">—</h2>
+          <p id="meta" class="muted"></p>
+        </div>
+      </div>
+      <div id="streams" class="streams"></div>
+    </section>
+
+    <p id="status" class="status muted"></p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="logo-text">PRISM</span>
+      <p>One hub. Many tools.</p>
+    </div>
+  </footer>
+
+  <script src="downloader.js"></script>
+</body>
+</html>
