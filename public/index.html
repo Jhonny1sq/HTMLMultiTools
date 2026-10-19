@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PRISM — one hub, many tools. Fast, free, no signup." />
+  <title>PRISM — One Hub. Many Tools.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="beam" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="/" class="logo">
+      <span class="logo-mark">◆</span>
+      <span class="logo-text">PRISM</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
+      <a href="/tools" class="btn btn-ghost">Open Tools</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">One hub. Many tools. Zero signup.</p>
+        <h1 class="hero-title">
+          Split one problem<br />
+          into <span class="gradient">every answer.</span>
+        </h1>
+        <p class="hero-sub">
+          PRISM is a growing collection of fast, free, browser-based utilities.
+          Converters, formatters, generators, analyzers — all in one clean place.
+          No accounts. No tracking. No nonsense.
+        </p>
+        <div class="hero-cta">
+          <a href="/tools" class="btn btn-primary">Launch Tools →</a>
+          <a href="#features" class="btn btn-ghost">See what's inside</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="stat-tools">0</strong><span>tools live</span></div>
+          <div><strong>100%</strong><span>in-browser</span></div>
+          <div><strong>0</strong><span>accounts needed</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="prism">
+          <div class="prism-shape"></div>
+          <div class="ray r1"></div>
+          <div class="ray r2"></div>
+          <div class="ray r3"></div>
+          <div class="ray r4"></div>
+          <div class="ray r5"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2 class="section-title">Why PRISM</h2>
+      <p class="section-sub">Built for people who just need the job done.</p>
+      <div class="feature-grid">
+        <article class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Instant</h3>
+          <p>Every tool runs client-side. No uploads, no waits, no round trips to a server.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🔒</div>
+          <h3>Private</h3>
+          <p>Your data never leaves your browser. Nothing is logged, stored, or sold.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🧩</div>
+          <h3>Modular</h3>
+          <p>Each tool is its own page. Add one without touching the rest of the hub.</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">🎯</div>
+          <h3>Focused</h3>
+          <p>One job per tool, done well. No bloat, no upsells, no feature creep.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="tools" class="tools-preview">
+      <h2 class="section-title">Coming to the bench</h2>
+      <p class="section-sub">The first wave of tools.</p>
+      <div class="tool-grid">
+        <div class="tool-card"><span class="tool-badge">soon</span><h3>JSON Formatter</h3><p>Pretty-print, minify, and validate JSON instantly.</p></div>
+        <div class="tool-card"><span class="tool-badge">soon</span><h3>Base64 Encode</h3><p>Encode and decode Base64 text or files.</p></div>
+        <div class="tool-card"><span class="tool-badge">soon</span><h3>Color Converter</h3><p>HEX, RGB, HSL — convert and preview live.</p></div>
+        <div class="tool-card"><span class="tool-badge">soon</span><h3>Password Gen</h3><p>Strong random passwords, length and symbol control.</p></div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2 class="section-title">Built on a bench</h2>
+      <p class="section-sub">
+        PRISM is a small, honest project — one hub, tools added when they're ready.
+        If it saves you five minutes, it did its job.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="logo-text">PRISM</span>
+      <p>One hub. Many tools. © <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
