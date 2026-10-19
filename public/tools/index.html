@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PRISM tools — every utility on one shelf." />
+  <title>PRISM — Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .hub {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: clamp(50px, 9vw, 100px) clamp(20px, 5vw, 56px) 80px;
+      position: relative;
+      z-index: 1;
+    }
+    .hub-head { text-align: center; margin-bottom: 48px; }
+    .hub-head h1 {
+      font-size: clamp(30px, 5vw, 56px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin: 10px 0 14px;
+    }
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 26px 24px 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+      transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+      min-height: 170px;
+    }
+    .card.live:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-2);
+      box-shadow: 0 18px 40px rgba(0, 224, 184, 0.08);
+    }
+    .card.soon { opacity: 0.72; }
+    .card.soon:hover { transform: none; }
+    .card h2 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+    .card p { color: var(--muted); font-size: 13.5px; line-height: 1.55; }
+    .card .go {
+      margin-top: auto;
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card .go::after { content: "→"; transition: transform .2s ease; }
+    .card.live:hover .go::after { transform: translateX(4px); }
+    .badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+    .badge.on {
+      color: var(--accent-2);
+      border-color: rgba(0, 224, 184, 0.35);
+      background: rgba(0, 224, 184, 0.06);
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .back:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="beam" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="/" class="logo">
+      <span class="logo-mark">◆</span>
+      <span class="logo-text">PRISM</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/tools">Tools</a>
+      <a href="/tools/downloader" class="btn btn-ghost">Media Grabber</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="hub">
+    <a href="/" class="back">← back to home</a>
+
+    <div class="hub-head">
+      <p class="eyebrow">the shelf</p>
+      <h1>Every tool, <span class="gradient">one bench.</span></h1>
+      <p class="section-sub">Each one runs in your browser. Pick a tool, get the job done, close the tab.</p>
+    </div>
+
+    <div class="hub-grid">
+      <a class="card live" href="/tools/downloader">
+        <span class="badge on">live</span>
+        <h2>Media Grabber</h2>
+        <p>Pull video or audio from a link. MP4 and MP3, streamed straight to you.</p>
+        <span class="go">open</span>
+      </a>
+
+      <div class="card soon">
+        <span class="badge">soon</span>
+        <h2>JSON Formatter</h2>
+        <p>Pretty-print, minify, and validate JSON in one paste.</p>
+      </div>
+
+      <div class="card soon">
+        <span class="badge">soon</span>
+        <h2>Base64</h2>
+        <p>Encode and decode text or files. Copy in one click.</p>
+      </div>
+
+      <div class="card soon">
+        <span class="badge">soon</span>
+        <h2>Color Converter</h2>
+        <p>HEX, RGB, HSL — convert and preview live swatches.</p>
+      </div>
+
+      <div class="card soon">
+        <span class="badge">soon</span>
+        <h2>Password Gen</h2>
+        <p>Strong random strings. Length, symbols, and entropy readout.</p>
+      </div>
+
+      <div class="card soon">
+        <span class="badge">soon</span>
+        <h2>More coming</h2>
+        <p>The shelf grows one tool at a time. Same bench, same rules.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="logo-text">PRISM</span>
+      <p>One hub. Many tools. © <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
